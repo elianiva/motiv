@@ -1,0 +1,62 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "run-p routify rollup",
+    "dev:nollup": "run-p routify nollup",
+    "dev-dynamic": "cross-env BUNDLING=dynamic npm run dev",
+    "build": "routify -b && rollup -c && spank && workbox injectManifest",
+    "serve": "spassr --serve-spa --serve-ssr",
+    "export": "spank",
+    "build:docker": "npm run build && ./scripts/docker/docker-build.sh",
+    "deploy:vercel": "cd scripts/vercel && npm run deploy",
+    "deploy:netlify": "cd scripts/netlify && npm run deploy",
+    "rollup": "rollup -cw",
+    "nollup": "nollup -c",
+    "routify": "routify",
+    "prettier": "prettier --write --plugin-search-dir=. './**/*.svelte'",
+    "lint": "eslint --fix ./**/*.svelte"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "autoprefixer": "^9.8.6",
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
+    "eslint": "^7.13.0",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "nollup": "^0.13.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.2",
+    "prettier-plugin-svelte": "^1.4.1",
+    "rollup": "^2.18.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-hot": "^0.0.31",
+    "rollup-plugin-livereload": "^1.3.0",
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-svelte": "^5.2.3",
+    "rollup-plugin-svelte-hot": "^0.10.0",
+    "rollup-plugin-svelte-svg": "^0.2.3",
+    "rollup-plugin-terser": "^6.1.0",
+    "spassr": "^1.1.2",
+    "tailwindcss": "^1.9.6",
+    "@ksedline/turnjs": "^0.1.0",
+    "jquery": "^3.5.1"
+  },
+  "dependencies": {
+    "@rollup/plugin-replace": "^2.3.3",
+    "@roxi/routify": "^2.1.0",
+    "postcss-import": "^12.0.1",
+    "spank": "^1.4.0",
+    "svelte": "^3.23.2",
+    "svelte-preprocess": "^4.0.8",
+    "workbox-cli": "^5.1.3"
+  },
+  "routify": {
+    "extensions": "svelte,html,svx,md",
+    "dynamicImports": true,
+    "routifyDir": ".routify"
+  }
+}

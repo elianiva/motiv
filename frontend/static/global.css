@@ -1,0 +1,22 @@
+body {
+  background-color: #f7fafc;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+  scrollbar-color: #e67716 #efefef;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #e67716;
+}
+
+html::-webkit-scrollbar {
+  background-color: #efefef;
+  width: 0.5rem;
+}
