@@ -1,4 +1,4 @@
-A submission for a competition that me and my friends did around October 2020.
+A submission for a competition that me and my friends did around October/November 2020.
 I made the entire app in this repo and my friends made the content inside it.
 
 The `backend` folder uses Express.js, Tailwind.css, Alpine.js and the
